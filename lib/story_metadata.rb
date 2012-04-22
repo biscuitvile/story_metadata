@@ -1,5 +1,10 @@
-require "story_metadata/version"
+require 'story_metadata/version'
+require 'rspec/core/formatters/base_text_formatter'
 
-module StoryMetadata
-  # Your code goes here...
+module Story
+  def example_passed(example)
+    example.description << " #{example.metadata[:story]}"
+  end
 end
+
+RSpec::Core::Formatters::BaseTextFormatter.send(:include, Story)
