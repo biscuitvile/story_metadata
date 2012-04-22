@@ -14,4 +14,6 @@ Gem::Specification.new do |gem|
   gem.name          = "story_metadata"
   gem.require_paths = ["lib"]
   gem.version       = StoryMetadata::VERSION
+
+  gem.add_development_dependency 'rspec'
 end
