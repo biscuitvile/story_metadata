@@ -1,29 +1,32 @@
-# StoryMetadata
+# Story Metadata
 
-TODO: Write a gem description
+Story Metadata adds very basic functionality for getting more descriptive
+story output when using RSpec for acceptance testing.
+
+## Usage
+
+Simply add a `:story` metadata tag to your RSpec example to have it
+output with passing examples:
+
+    it "Adds story metadata to your acceptance specs", :story => %q{
+      Given I've invested the time to write stories
+      When I run my acceptance specs
+      Then I want to see those bad boys
+    } do
+      ...
+    end
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'story_metadata'
+    gem 'story_metadata', :github => 'andybz/story_metadata'
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
+## Credit
 
-    $ gem install story_metadata
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Added some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+This technique was described by David Chelimsky answering a user's question on
+the RSpec mailing list [here](http://groups.google.com/group/rspec/browse_thread/thread/17de33b316261ad6/a2886d5a62f2698e).
